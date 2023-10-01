@@ -1,23 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-const StateDropdown = ({ onChange }) => {
-  const [selectedState, setSelectedState] = useState("");
-
-  const handleStateChange = (e) => {
-    const newState = e.target.value;
-    setSelectedState(newState);
-    onChange(newState); // Pass the selected state back to the parent component
-  };
-
+const StateDropdown = ({ states, selectedState, onSelectState }) => {
   return (
-    <div>
-      <label>State:</label>
-      <select value={selectedState} onChange={handleStateChange}>
+    <div className=" grid grid-cols-4 my-2">
+      <label className="">State:</label>
+      <select className=" border border-slate-400 rounded-md px-2" value={selectedState} onChange={onSelectState}>
         <option value="">Select State</option>
-        {/* Populate the dropdown options with your state data */}
-        <option value="state1">State 1</option>
-        <option value="state2">State 2</option>
-        {/* Add more state options here */}
+        {states.map((state) => (
+          <option key={state} value={state}>
+            {state}
+          </option>
+        ))}
       </select>
     </div>
   );

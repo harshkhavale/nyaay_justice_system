@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const PoliceStationDropdown = ({ selectedDistrict }) => {
-  const [policeStations, setPoliceStations] = useState([]);
-
-  useEffect(() => {
-    // Fetch police stations based on the selected district (You need to implement this)
-    // Update the 'policeStations' state with the fetched data
-  }, [selectedDistrict]);
-
+const PoliceStationDropdown = ({ policeStations }) => {
   return (
-    <div>
-      <label>Police Station:</label>
-      <select>
+    <div className=" grid grid-cols-4 my-2">
+      <label className="">Police Station:</label>
+      <select className=" border border-slate-400 rounded-md px-2">
         <option value="">Select Police Station</option>
-        {policeStations.map((policeStation) => (
-          <option key={policeStation.id} value={policeStation.id}>
-            {policeStation.name}
+        {policeStations.map((station) => (
+          <option key={station} value={station}>
+            {station}
           </option>
         ))}
       </select>

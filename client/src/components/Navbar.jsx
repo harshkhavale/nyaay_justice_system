@@ -9,7 +9,7 @@ const Navbar = () => {
 
   
   return (
-    <div className="navbar">
+    <div className="navbar bg-white">
       <div className="subnav flex justify-end items-center p-1 text-xs">
 
         <div className="sidebar flex gap-2 text-sm  sticky">

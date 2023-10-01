@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const DistrictDropdown = ({ selectedState, onChange }) => {
-  const [districts, setDistricts] = useState([]);
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-
-  useEffect(() => {
-    // Fetch districts based on the selected state (You need to implement this)
-    // Update the 'districts' state with the fetched data
-  }, [selectedState]);
-
-  const handleDistrictChange = (e) => {
-    const newDistrict = e.target.value;
-    setSelectedDistrict(newDistrict);
-    onChange(newDistrict); // Pass the selected district back to the parent component
-  };
-
+const DistrictDropdown = ({ districts, selectedDistrict, onSelectDistrict }) => {
   return (
-    <div>
-      <label>District:</label>
-      <select value={selectedDistrict} onChange={handleDistrictChange}>
+    <div className=" grid grid-cols-4">
+      <label className="">District:</label>
+      <select className=" border border-slate-400 rounded-md px-2" value={selectedDistrict} onChange={onSelectDistrict}>
         <option value="">Select District</option>
         {districts.map((district) => (
-          <option key={district.id} value={district.id}>
-            {district.name}
+          <option key={district} value={district}>
+            {district}
           </option>
         ))}
       </select>

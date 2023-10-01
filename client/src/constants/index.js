@@ -33,4 +33,33 @@ const stateDistricts = {
   // Add more states and districts as needed
 };
 
+const indianData = {
+  "Andhra Pradesh": {
+    districts: {
+      "Anantapur": {
+        policeStations: ["Station 1", "Station 2", "Station 3"],
+      },
+      "Chittoor": {
+        policeStations: ["Station 4", "Station 5", "Station 6"],
+      },
+      // Add more districts and police stations for Andhra Pradesh here
+    },
+  },
+  "Telangana": {
+    districts: {
+      "Adilabad": {
+        policeStations: ["Station A", "Station B", "Station C"],
+      },
+      "Hyderabad": {
+        policeStations: ["Station D", "Station E", "Station F"],
+      },
+      // Add more districts and police stations for Telangana here
+    },
+  },
+  // Add more states with districts and police stations here
+};
+
+export default indianData;
+
+
 export { bannerData, stateDistricts };
